@@ -821,7 +821,24 @@ document.addEventListener("DOMContentLoaded", () => {
     initQuiz();
     initPastExams();
     renderPastExams();
+    initScrollToTop();
 });
+
+// Scroll to top button logic
+function initScrollToTop() {
+    const btn = document.getElementById("scroll-top-btn");
+    if (!btn) return;
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+            btn.classList.add("visible");
+        } else {
+            btn.classList.remove("visible");
+        }
+    });
+    btn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+}
 
 // 1. Theme Configuration Logic
 function initTheme() {
@@ -1335,11 +1352,13 @@ function initQuiz() {
     const btnSubmit = document.getElementById("quiz-submit-btn");
     const btnNext = document.getElementById("quiz-next-btn");
     const btnRestart = document.getElementById("quiz-restart-btn");
+    const btnReview = document.getElementById("quiz-review-btn");
     
     btnStart.addEventListener("click", startQuiz);
     btnSubmit.addEventListener("click", submitAnswer);
     btnNext.addEventListener("click", nextQuestion);
     btnRestart.addEventListener("click", restartQuiz);
+    btnReview.addEventListener("click", toggleReviewPanel);
 }
 
 // Helper for shuffling arrays using Fisher-Yates algorithm
@@ -1568,29 +1587,113 @@ function showResults() {
     const activeQuizData = quizState.questions;
     document.getElementById("quiz-active").style.display = "none";
     document.getElementById("quiz-summary").style.display = "block";
+    document.getElementById("quiz-review-panel").style.display = "none";
+    document.getElementById("quiz-review-panel").innerHTML = "";
     
-    document.getElementById("score-num-text").textContent = quizState.score;
+    const scoreNum = quizState.score;
+    document.getElementById("score-num-text").textContent = scoreNum;
+    document.getElementById("quiz-review-btn").innerHTML = `<i class="fa-solid fa-list-check"></i> ดูเฉลยทั้งหมด`;
+    
+    // Apply color class to score circle
+    const scoreCircle = document.getElementById("score-circle");
+    scoreCircle.className = "score-circle"; // reset
+    if (scoreNum === 10) {
+        scoreCircle.classList.add("excellent");
+        launchConfetti();
+    } else if (scoreNum >= 8) {
+        scoreCircle.classList.add("good");
+    } else if (scoreNum >= 6) {
+        scoreCircle.classList.add("average");
+    } else {
+        scoreCircle.classList.add("poor");
+    }
     
     let title = "";
     let comment = "";
     
-    if (quizState.score === 10) {
+    if (scoreNum === 10) {
         title = "🏆 สอบได้คะแนนเต็ม 10/10!";
-        comment = `คุณทำข้อสอบสนาม ${examData[activeExam].title} ถูกครบถ้วนทั้งหมด 10 ข้อ! สุดยอดความแม่นยำทางวิชาการและเนื้อหาระเบียบ คุณมีความรู้เต็มร้อยพร้อมลงชิงชัยข้อสอบจริงแล้วครับ`;
-    } else if (quizState.score >= 8) {
+        comment = `คุณทำข้อสอบสนาม ${examData[activeExam].title} ถูกครบถ้วนทั้งหมด 10 ข้อ! สุดยอดความแม่นยำทางวิชาการ คุณพร้อมลงชิงชัยข้อสอบจริงแล้วครับ!`;
+    } else if (scoreNum >= 8) {
         title = "👏 คะแนนระดับดีเยี่ยม!";
-        comment = `คุณทำคะแนนได้ ${quizState.score}/10 คะแนน ถือว่าสอบผ่านเกณฑ์รวดเดียวอย่างสบายใจสำหรับสนาม ${examData[activeExam].title} ทบทวนจุดที่คุณเฉลยผิดในระบบอีกสักนิดเพื่อเก็บคะแนนเต็ม`;
-    } else if (quizState.score >= 6) {
+        comment = `คุณทำคะแนนได้ ${scoreNum}/10 คะแนน ถือว่าสอบผ่านเกณฑ์รวดเดียวอย่างสบายใจ ทบทวนจุดที่ตอบผิดพักหนึ่งเพื่อเก็บคะแนนเต็มนะครับ`;
+    } else if (scoreNum >= 6) {
         title = "👍 สอบผ่านเกณฑ์ขั้นต่ำ";
-        comment = `คุณทำคะแนนได้ ${quizState.score}/10 คะแนน ผ่านเกณฑ์ประเมินเบื้องต้น แต่อาจจะเสี่ยงในห้องสอบจริง แนะนำให้กลับไปอ่านจุดเน้นในแท็บสรุปเนื้อหาอีกรอบเพื่อเสริมความแม่นยำก่อนสอบนะครับ`;
+        comment = `คุณทำคะแนนได้ ${scoreNum}/10 คะแนน ผ่านเกณฑ์ประเมินเบื้องต้น แต่อาจจะเสี่ยงในห้องสอบจริง แนะนำให้ดูเฉลยทั้งหมดเพื่อทบทวนจุดอ่อนครับ`;
     } else {
         title = "📚 ต้องกลับมาทบทวนเพิ่มเติมด่วน";
-        comment = `คะแนนของคุณได้ ${quizState.score}/10 ข้อ ยังไม่ผ่านเกณฑ์การประเมินเบื้องต้นสำหรับสนาม ${examData[activeExam].title} แนะนำให้อ่านวิเคราะห์ประเด็นเน้นข้อสอบและคำอธิบายเฉลยวิชานั้นๆ ทบทวนแล้วกลับมาลองสอบอีกครั้ง สู้ๆ ครับ!`;
+        comment = `คะแนนของคุณได้ ${scoreNum}/10 ข้อ ยังไม่ผ่านเกณฑ์ — ดูเฉลยทั้งหมดเพื่อวิเคราะห์จุดที่พลาด แล้วกลับมาลองอีกครั้ง สู้ๆ ครับ!`;
     }
     
     document.getElementById("score-title-text").textContent = title;
     document.getElementById("score-comment-text").textContent = comment;
     document.getElementById("quiz-progress").style.width = "100%";
+}
+
+function launchConfetti() {
+    const container = document.getElementById("confetti-container");
+    container.innerHTML = "";
+    const colors = ["#38bdf8", "#818cf8", "#4ade80", "#fbbf24", "#f87171", "#e879f9"];
+    for (let i = 0; i < 60; i++) {
+        const piece = document.createElement("div");
+        piece.className = "confetti-piece";
+        piece.style.left = `${Math.random() * 100}%`;
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = `${Math.random() * 1.2}s`;
+        piece.style.animationDuration = `${1.8 + Math.random() * 1.2}s`;
+        piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+        piece.style.width = `${6 + Math.floor(Math.random() * 6)}px`;
+        piece.style.height = `${6 + Math.floor(Math.random() * 6)}px`;
+        container.appendChild(piece);
+    }
+    // Clean up after animation
+    setTimeout(() => { container.innerHTML = ""; }, 4000);
+}
+
+function toggleReviewPanel() {
+    const panel = document.getElementById("quiz-review-panel");
+    const btn = document.getElementById("quiz-review-btn");
+    if (panel.style.display === "none") {
+        renderReviewPanel();
+        panel.style.display = "flex";
+        btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> ซ่อนเฉลย`;
+        panel.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else {
+        panel.style.display = "none";
+        btn.innerHTML = `<i class="fa-solid fa-list-check"></i> ดูเฉลยทั้งหมด`;
+    }
+}
+
+function renderReviewPanel() {
+    const panel = document.getElementById("quiz-review-panel");
+    panel.innerHTML = "";
+    
+    quizState.questions.forEach((q, idx) => {
+        const userAns = quizState.answers[idx];
+        const isCorrect = userAns === q.answer;
+        const isTimeout = userAns === null;
+        
+        let statusClass = isCorrect ? "correct" : (isTimeout ? "timeout" : "wrong");
+        let statusLabel = isCorrect 
+            ? `<i class="fa-solid fa-check"></i> ข้อ ${idx + 1}: ตอบถูก`
+            : (isTimeout ? `<i class="fa-solid fa-clock"></i> ข้อ ${idx + 1}: หมดเวลา` : `<i class="fa-solid fa-xmark"></i> ข้อ ${idx + 1}: ตอบผิด`);
+        
+        const userAnswerText = (userAns !== null && userAns !== undefined)
+            ? q.options[userAns]
+            : "ไม่ได้เลือกคำตอบ";
+        const correctAnswerText = q.options[q.answer];
+        
+        const item = document.createElement("div");
+        item.className = `review-item ${statusClass}`;
+        item.innerHTML = `
+            <div class="review-item-header">${statusLabel}</div>
+            <div class="review-question">${q.question.replace(/\n/g, "<br>")}</div>
+            <div class="review-answer-row">คำตอบของคุณ: <b class="${isCorrect ? 'review-answer-correct' : 'review-answer-wrong'}">${userAnswerText}</b></div>
+            <div class="review-answer-row">คำตอบที่ถูก: <b class="review-answer-correct">${correctAnswerText}</b></div>
+            <div class="review-explanation"><strong>เฉลย:</strong> ${q.explanation}</div>
+        `;
+        panel.appendChild(item);
+    });
 }
 
 function restartQuiz() {

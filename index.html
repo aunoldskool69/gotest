@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ระบบติวสอบ ก.พ. & นายสิบตำรวจ - ปี 69</title>
     <meta name="description" content="คู่มือเตรียมสอบวิชาคอมพิวเตอร์และวิชาหลักอื่นๆ สำหรับการสอบ ก.พ. ภาค ก และ นายสิบตำรวจ ปี 2569 สรุปเนื้อหาเด่น คีย์ลัด คีย์เวิร์ดอาเซียน กฎหมาย พร้อมแนวข้อสอบเก่าพร้อมเฉลยละเอียด">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+    <!-- Google Fonts Preconnect for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- Font Awesome CDN for Modern Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS Stylesheet -->
@@ -179,16 +184,26 @@
 
                     <!-- Score Summary Card -->
                     <div id="quiz-summary" class="score-summary-card">
-                        <div class="score-circle">
+                        <!-- Confetti container for perfect score -->
+                        <div class="confetti-container" id="confetti-container"></div>
+                        <div class="score-circle" id="score-circle">
                             <span class="score-num" id="score-num-text">0</span>
                             <span class="score-total">/ 10 คะแนน</span>
                         </div>
                         <h2 class="score-title" id="score-title-text">ประเมินผลคะแนนของคุณ</h2>
                         <p class="score-comment" id="score-comment-text">กำลังประเมินคะแนน...</p>
-                        <button id="quiz-restart-btn" class="btn-action">
-                            <i class="fa-solid fa-arrows-rotate"></i> ทำข้อสอบใหม่อีกครั้ง
-                        </button>
+                        <div class="score-actions">
+                            <button id="quiz-review-btn" class="btn-secondary">
+                                <i class="fa-solid fa-list-check"></i> ดูเฉลยทั้งหมด
+                            </button>
+                            <button id="quiz-restart-btn" class="btn-action">
+                                <i class="fa-solid fa-arrows-rotate"></i> ทำใหม่อีกครั้ง
+                            </button>
+                        </div>
                     </div>
+
+                    <!-- Review Panel (hidden by default) -->
+                    <div id="quiz-review-panel" class="quiz-review-panel" style="display:none;"></div>
                 </div>
             </section>
             
@@ -214,7 +229,27 @@
 
         </main>
 
+        <!-- App Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">📚</span>
+                    <span class="footer-name">คลังติวสอบ ก.พ. &amp; นายสิบตำรวจ</span>
+                </div>
+                <p class="footer-disclaimer">
+                    <i class="fa-solid fa-circle-info"></i>
+                    ข้อมูลบนเว็บไซต์นี้เป็นเพียงแนวทางเตรียมสอบ ไม่ใช่ข้อสอบจริง โปรดศึกษาจากแหล่งข้อมูลทางการด้วยเสมอ
+                </p>
+                <p class="footer-copy">© 2569 · อัปเดตล่าสุดปี 69 · <a href="https://github.com/aunoldskool69/gotest" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> Source Code</a></p>
+            </div>
+        </footer>
+
     </div>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top-btn" id="scroll-top-btn" aria-label="เลื่อนกลับขึ้นด้านบน" title="กลับขึ้นบน">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
 
     <!-- Custom JS App logic -->
     <script src="app.js"></script>

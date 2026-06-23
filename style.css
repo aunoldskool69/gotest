@@ -1321,3 +1321,289 @@ header.app-header p {
     }
 }
 
+/* ==========================================
+   Phase 1 Additions
+   ========================================== */
+
+/* --- Score Circle Color Variants --- */
+.score-circle.excellent {
+    border-color: var(--success);
+    box-shadow: 0 0 0 6px rgba(74, 222, 128, 0.1), var(--shadow-md);
+}
+.score-circle.excellent .score-num { color: var(--success); }
+
+.score-circle.good {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-primary);
+}
+
+.score-circle.average {
+    border-color: var(--warning);
+    box-shadow: 0 4px 16px rgba(217, 119, 6, 0.2);
+}
+.score-circle.average .score-num { color: var(--warning); }
+
+.score-circle.poor {
+    border-color: var(--error);
+    box-shadow: 0 4px 16px rgba(220, 38, 38, 0.2);
+}
+.score-circle.poor .score-num { color: var(--error); }
+
+/* --- Score Actions (button row) --- */
+.score-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 4px;
+}
+
+/* Secondary Button Style */
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+}
+.btn-secondary:hover {
+    background: var(--primary-bg);
+    transform: translateY(-1px);
+}
+
+/* --- Quiz Review Panel --- */
+.quiz-review-panel {
+    max-width: 650px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.review-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.review-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+}
+
+.review-item.correct::before { background: var(--success); }
+.review-item.wrong::before { background: var(--error); }
+.review-item.timeout::before { background: var(--warning); }
+
+.review-item-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.review-item.correct .review-item-header { color: var(--success); }
+.review-item.wrong .review-item-header { color: var(--error); }
+.review-item.timeout .review-item-header { color: var(--warning); }
+
+.review-question {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-main);
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.review-answer-row {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.review-answer-row b {
+    color: var(--text-main);
+}
+
+.review-answer-correct { color: var(--success) !important; }
+.review-answer-wrong { color: var(--error) !important; }
+
+.review-explanation {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-color);
+    line-height: 1.5;
+}
+
+/* --- Confetti Animation (perfect score) --- */
+.confetti-container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: -10px;
+    border-radius: 2px;
+    opacity: 0;
+    animation: confettiFall 2.5s ease-in forwards;
+}
+
+@keyframes confettiFall {
+    0%   { opacity: 1; transform: translateY(0) rotate(0deg); }
+    100% { opacity: 0; transform: translateY(400px) rotate(720deg); }
+}
+
+/* --- App Footer --- */
+.app-footer {
+    margin-top: 32px;
+    padding: 20px 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-logo {
+    font-size: 1.4rem;
+}
+
+.footer-name {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.footer-disclaimer {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    max-width: 520px;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.footer-disclaimer i {
+    color: var(--primary);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.footer-copy {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.footer-copy a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: var(--transition);
+}
+.footer-copy a:hover {
+    text-decoration: underline;
+}
+
+/* --- Scroll to Top Button --- */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s;
+    z-index: 9999;
+}
+
+.scroll-top-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.scroll-top-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Responsive footer */
+@media (max-width: 600px) {
+    .score-actions {
+        flex-direction: column;
+    }
+    .score-actions .btn-secondary,
+    .score-actions .btn-action {
+        width: 100%;
+        justify-content: center;
+    }
+    .scroll-top-btn {
+        bottom: 16px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+    }
+    .app-footer {
+        border-radius: var(--radius-md);
+        padding: 16px;
+    }
+}
+
