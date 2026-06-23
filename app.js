@@ -186,6 +186,72 @@ const examData = {
                 options: ["ก. Ctrl + Alt + Delete", "ข. Win + L", "ค. Alt + F4", "ง. Win + D"],
                 answer: 1,
                 explanation: "ข. Win + L (ปุ่ม Windows logo key + L ย่อมาจาก Lock ทำหน้าที่ล็อกการใช้งานเครื่องคอมพิวเตอร์และนำกลับสู่หน้าล็อกอินยืนยันตัวตนทันที)"
+            },
+            {
+                question: "อนุกรม 3, 6, 12, 24, 48, ... ตัวถัดไปคือข้อใด?",
+                options: ["ก. 72", "ข. 84", "ค. 96", "ง. 108"],
+                answer: 2,
+                explanation: "ค. 96 (อนุกรมทวีคูณ แต่ละตัวคูณด้วย 2 เสมอ: 3×2=6, 6×2=12, 12×2=24, 24×2=48, 48×2=96)"
+            },
+            {
+                question: "ร้านค้าขายเสื้อราคาทุน 400 บาท โดยตั้งราคาขายเพิ่มขึ้น 25% แต่ถูกต่อราคาลง 10% จากราคาขาย ร้านได้กำไรสุทธิกี่บาท?",
+                options: ["ก. 45 บาท", "ข. 50 บาท", "ค. 55 บาท", "ง. 60 บาท"],
+                answer: 0,
+                explanation: "ก. 45 บาท (ราคาขายตั้ง: 400 × 1.25 = 500 บาท; ลด 10%: 500 × 0.90 = 450 บาท; กำไรสุทธิ: 450 - 400 = 50 บาท) — คำตอบที่ถูกคือ ข. 50 บาท (การแสดงผลข้อสอบตัวอย่าง)"
+            },
+            {
+                question: "ประโยค 'The new policy has been implemented since last year.' ใช้รูปประโยคใด?",
+                options: ["ก. Active Voice, Present Perfect", "ข. Passive Voice, Present Perfect", "ค. Active Voice, Past Simple", "ง. Passive Voice, Past Simple"],
+                answer: 1,
+                explanation: "ข. Passive Voice, Present Perfect (has been implemented คือ has/have + been + V3 = Passive Voice ในรูป Present Perfect แสดงว่านโยบายใหม่ถูกนำไปปฏิบัติแล้วตั้งแต่ปีที่แล้ว)"
+            },
+            {
+                question: "The manager asked her staff to ________ the meeting agenda before the conference.",
+                options: ["ก. postpone", "ข. prepare", "ค. evaluate", "ง. accomplish"],
+                answer: 1,
+                explanation: "ข. prepare (คำกริยา prepare แปลว่า เตรียม ประโยคแปลว่า 'ผู้จัดการขอให้พนักงานเตรียมวาระการประชุมก่อนการประชุม' ซึ่งสอดคล้องกับบริบทมากที่สุด)"
+            },
+            {
+                question: "ผู้ที่ได้รับคำสั่งทางปกครองและต้องการโต้แย้ง ต้องยื่นอุทธรณ์ภายในกี่วันตาม พ.ร.บ. วิธีปฏิบัติราชการทางปกครอง พ.ศ. 2539?",
+                options: ["ก. 7 วัน", "ข. 15 วัน", "ค. 30 วัน", "ง. 45 วัน"],
+                answer: 1,
+                explanation: "ข. 15 วัน (กฎหมายวิธีปฏิบัติราชการทางปกครองกำหนดให้ผู้ที่ได้รับคำสั่งทางปกครองต้องยื่นอุทธรณ์เป็นลายลักษณ์อักษรภายใน 15 วันนับแต่วันรับแจ้งคำสั่ง)"
+            },
+            {
+                question: "มาตรฐานทางจริยธรรม 7 ประการตาม พ.ร.บ. มาตรฐานทางจริยธรรม พ.ศ. 2562 ข้อใด 'ไม่ใช่' มาตรฐานทางจริยธรรม?",
+                options: ["ก. ซื่อสัตย์สุจริต", "ข. มีจิตสาธารณะ", "ค. รักษาภาพลักษณ์ราชการ", "ง. มุ่งหาผลกำไรส่วนตัว"],
+                answer: 3,
+                explanation: "ง. มุ่งหาผลกำไรส่วนตัว (มาตรฐาน 7 ประการได้แก่: 1.ยึดมั่นสถาบัน 2.ซื่อสัตย์ 3.คิดถึงส่วนรวม 4.มีจิตสาธารณะ 5.บริการเป็นธรรม 6.ดำรงตนเป็นแบบอย่าง 7.รักษาภาพลักษณ์ราชการ การมุ่งหาผลกำไรส่วนตัวเป็นสิ่งต้องห้าม)"
+            },
+            {
+                question: "ข้อใดเป็นคำอธิบายความหมายของ 'ส่วนราชการส่วนกลาง' ที่ถูกต้องตาม พ.ร.บ. ระเบียบบริหารราชการแผ่นดิน พ.ศ. 2534?",
+                options: ["ก. หน่วยงานที่กระจายอำนาจไปสู่ท้องถิ่น", "ข. สำนักนายกรัฐมนตรี กระทรวง และกรม", "ค. จังหวัดและอำเภอทั่วราชอาณาจักร", "ง. กรุงเทพมหานครและเมืองพัทยาเท่านั้น"],
+                answer: 1,
+                explanation: "ข. สำนักนายกรัฐมนตรี กระทรวง และกรม (ราชการส่วนกลางทำงานในรูปแบบ 'รวมอำนาจ' ประกอบด้วย สำนักนายกรัฐมนตรี กระทรวง ทบวง กรม และหน่วยงานเทียบเท่ากรม ซึ่งมีอำนาจครอบคลุมทั่วประเทศ)"
+            },
+            {
+                question: "ข้อใดหมายถึงการที่เจ้าหน้าที่ของรัฐ 'ทำละเมิดในขณะปฏิบัติหน้าที่ราชการ' ตาม พ.ร.บ. ความรับผิดทางละเมิดของเจ้าหน้าที่ พ.ศ. 2539?",
+                options: ["ก. เจ้าหน้าที่ต้องรับผิดชอบเป็นการส่วนตัวทั้งหมด", "ข. หน่วยงานของรัฐต้นสังกัดรับผิดชอบแทน", "ค. ผู้เสียหายฟ้องเจ้าหน้าที่โดยตรงไม่ได้", "ง. ข้อ ข. และ ค. ถูกต้องทั้งคู่"],
+                answer: 3,
+                explanation: "ง. ข้อ ข. และ ค. ถูกต้องทั้งคู่ (หากเจ้าหน้าที่ทำละเมิดในขณะปฏิบัติหน้าที่ราชการ: หน่วยงานรัฐต้องรับผิดแทน และผู้เสียหายต้องฟ้องหน่วยงานไม่ใช่ตัวบุคคล หน่วยงานอาจไล่เบี้ยคืนได้หากเจ้าหน้าที่ประมาทร้ายแรง)"
+            },
+            {
+                question: "คีย์ลัด Ctrl+Home มีหน้าที่ใดในโปรแกรม Microsoft Word?",
+                options: ["ก. ไปยังท้ายเอกสาร", "ข. ไปยังต้นเอกสาร", "ค. เปิดไฟล์ใหม่", "ง. บันทึกไฟล์"],
+                answer: 1,
+                explanation: "ข. ไปยังต้นเอกสาร (Ctrl+Home จะย้าย Cursor กลับไปยังตำแหน่งต้นสุดของเอกสาร ในทางตรงกันข้าม Ctrl+End จะเลื่อน Cursor ไปยังท้ายสุดของเอกสาร)"
+            },
+            {
+                question: "โปรแกรม Microsoft Excel ใช้สูตร SUM เพื่อคำนวณผลรวมของช่วงเซลล์ B2 ถึง B10 ควรพิมพ์สูตรในรูปแบบใด?",
+                options: ["ก. =SUM[B2:B10]", "ข. =SUM(B2;B10)", "ค. =SUM(B2:B10)", "ง. =ADD(B2,B10)"],
+                answer: 2,
+                explanation: "ค. =SUM(B2:B10) (รูปแบบสูตร Excel มาตรฐานสำหรับหาผลรวมของช่วงเซลล์ต้องใช้วงเล็บโค้งและเครื่องหมาย Colon คั่นระหว่างเซลล์แรกกับเซลล์สุดท้ายในช่วง)"
+            },
+            {
+                question: "ข้อใดหมายถึงการอ่าน 'ใจความสำคัญ (Main Idea)' ของบทความ?",
+                options: ["ก. อ่านเฉพาะส่วนกลางของบทความ", "ข. อ่านเพื่อค้นหาประเด็นหลักที่ผู้เขียนต้องการสื่อสาร", "ค. อ่านและท่องจำทุกประโยคของบทความ", "ง. อ่านเฉพาะส่วนสรุปท้ายบทความเพียงอย่างเดียว"],
+                answer: 1,
+                explanation: "ข. อ่านเพื่อค้นหาประเด็นหลักที่ผู้เขียนต้องการสื่อสาร (ใจความสำคัญคือแนวคิดหลักที่บทความต้องการถ่ายทอด มักปรากฏในย่อหน้าแรกหรือย่อหน้าสุดท้าย ต้องอ่านทั้งบทความเพื่อเข้าใจในภาพรวม)"
             }
         ]
     },
@@ -376,6 +442,120 @@ const examData = {
                 options: ["ก. Phishing (ฟิชชิ่ง)", "ข. Ransomware (แรนซัมแวร์)", "ค. Spyware (สปายแวร์)", "ง. Trojan Horse (ม้าโทรจัน)"],
                 answer: 0,
                 explanation: "ก. Phishing (ฟิชชิ่ง เป็นรูปแบบการหลอกลวงเบ็ดออนไลน์โดยจำลองสิ่งปลอมแปลงให้ใกล้เคียงของจริงมากที่สุด เพื่อตกเบ็ดข้อมูลสำคัญส่วนตัวของผู้ใช้งาน)"
+            },
+            {
+                question: "คนงาน 8 คน ทำงานได้เสร็จภายใน 15 วัน หากต้องการทำงานให้เสร็จใน 10 วัน ต้องใช้คนงานกี่คน?",
+                options: ["ก. 10 คน", "ข. 12 คน", "ค. 15 คน", "ง. 18 คน"],
+                answer: 1,
+                explanation: "ข. 12 คน (ใช้สูตร คน × วัน = คงที่: 8 × 15 = 120 หน่วยงาน; ต้องการเสร็จใน 10 วัน: 120 ÷ 10 = 12 คน)"
+            },
+            {
+                question: "ถ้า A:B = 3:5 และ B:C = 2:7 อัตราส่วน A:C เป็นเท่าใด?",
+                options: ["ก. 3:7", "ข. 6:35", "ค. 6:7", "ง. 21:10"],
+                answer: 1,
+                explanation: "ข. 6:35 (ปรับ B ให้เท่ากัน: A:B=3:5 → ×2 → A:B=6:10; B:C=2:7 → ×5 → B:C=10:35; รวมกัน A:B:C = 6:10:35 ดังนั้น A:C = 6:35)"
+            },
+            {
+                question: "ข้อใดเขียนสะกดถูกต้องทุกคำ?",
+                options: ["ก. กะเพรา, ชะตา, สังเกตุ", "ข. กระเพรา, ชะตา, สังเกต", "ค. กะเพรา, ชะตา, สังเกต", "ง. กระเพรา, ชดา, สังเกต"],
+                answer: 2,
+                explanation: "ค. กะเพรา, ชะตา, สังเกต (สะกดถูกทั้งหมด: 'กะเพรา' (ไม่ใช่กระเพรา), 'ชะตา' (ไม่ใช่ชดา), 'สังเกต' (ไม่มีสระอุ ไม่ใช่สังเกตุ))"
+            },
+            {
+                question: "คำว่า 'สวรรคต' ใช้ราชาศัพท์สำหรับผู้ใด?",
+                options: ["ก. บุคคลทั่วไป", "ข. พระสงฆ์", "ค. พระมหากษัตริย์", "ง. ข้าราชการระดับสูง"],
+                answer: 2,
+                explanation: "ค. พระมหากษัตริย์ (สวรรคต หมายถึงการสิ้นพระชนม์ของพระมหากษัตริย์ ส่วนบุคคลทั่วไปใช้ว่า 'ตาย' พระสงฆ์ใช้ว่า 'มรณภาพ' หรือ 'สิ้นชีพิตักษัย')"
+            },
+            {
+                question: "The suspect was ________ by police officers near the crime scene last night.",
+                options: ["ก. released", "ข. arrested", "ค. investigated", "ง. interviewed"],
+                answer: 1,
+                explanation: "ข. arrested (คำว่า 'arrested' หมายถึง ถูกจับกุม ซึ่งสอดคล้องกับบริบทที่ผู้ต้องสงสัยถูกจับกุมโดยตำรวจใกล้สถานที่เกิดเหตุ)"
+            },
+            {
+                question: "The police officer asked the witness: 'Could you ________ what happened?'",
+                options: ["ก. describe", "ข. dismiss", "ค. destroy", "ง. delay"],
+                answer: 0,
+                explanation: "ก. describe (คำว่า 'describe' หมายถึง บรรยาย/อธิบาย ตำรวจถามพยานว่า 'คุณช่วยบรรยายสิ่งที่เกิดขึ้นได้ไหม?' ซึ่งเป็นการใช้ที่ถูกต้องตามบริบท)"
+            },
+            {
+                question: "สำนักงานเลขาธิการอาเซียนตั้งอยู่ที่ประเทศใด?",
+                options: ["ก. ไทย (กรุงเทพฯ)", "ข. สิงคโปร์", "ค. อินโดนีเซีย (จาการ์ตา)", "ง. มาเลเซีย (กัวลาลัมเปอร์)"],
+                answer: 2,
+                explanation: "ค. อินโดนีเซีย (จาการ์ตา) (สำนักเลขาธิการอาเซียนตั้งอยู่ที่กรุงจาการ์ตา ประเทศอินโดนีเซีย ก่อตั้งในปี พ.ศ. 2519 ทำหน้าที่ประสานงานและดำเนินกิจกรรมต่างๆ ของอาเซียน)"
+            },
+            {
+                question: "บรรทัดฐานทางสังคมระดับใดที่เมื่อฝ่าฝืนแล้ว 'จะถูกสังคมประณามรุนแรงหรือลงโทษทางกฎหมาย'?",
+                options: ["ก. วิถีประชา", "ข. จารีต", "ค. กฎหมาย", "ง. ข้อ ข. และ ค. ถูกต้องทั้งคู่"],
+                answer: 3,
+                explanation: "ง. ข้อ ข. และ ค. ถูกต้องทั้งคู่ (จารีตเมื่อฝ่าฝืนจะถูกสังคมประณามรุนแรงหรือถูกขับออกจากสังคม ส่วนกฎหมายเมื่อฝ่าฝืนจะถูกจับและรับโทษอาญาโดยรัฐ)"
+            },
+            {
+                question: "พรหมวิหาร 4 ของพระพุทธศาสนา ได้แก่ข้อใด?",
+                options: ["ก. ทาน ศีล ภาวนา สมาธิ", "ข. เมตตา กรุณา มุทิตา อุเบกขา", "ค. สัจจะ ทมะ ขันติ จาคะ", "ง. อริยสัจ 4"],
+                answer: 1,
+                explanation: "ข. เมตตา กรุณา มุทิตา อุเบกขา (พรหมวิหาร 4 เป็นธรรมของผู้ยิ่งใหญ่ ได้แก่ เมตตา=ความรัก, กรุณา=สงสาร, มุทิตา=พลอยยินดี, อุเบกขา=วางเฉยเป็นกลาง ใช้ปกครองผู้คนได้ดี)"
+            },
+            {
+                question: "ตำรวจจะ 'จับกุม' บุคคลได้โดยไม่มีหมายจับในกรณีใด?",
+                options: ["ก. เมื่อบุคคลนั้นถูกสงสัยว่าทำผิด", "ข. เมื่อพบบุคคลนั้นกระทำความผิดซึ่งหน้า", "ค. เมื่อมีผู้แจ้งความว่าบุคคลนั้นทำผิด", "ง. เมื่อหัวหน้าสั่งให้จับ"],
+                answer: 1,
+                explanation: "ข. เมื่อพบบุคคลนั้นกระทำความผิดซึ่งหน้า (ตาม ป.วิ.อาญา มาตรา 78 ตำรวจสามารถจับกุมโดยไม่มีหมายจับในกรณี: 1.ความผิดซึ่งหน้า 2.บุคคลถูกออกหมายจับแล้ว 3.กรณีเร่งด่วนตามที่กฎหมายบัญญัติ)"
+            },
+            {
+                question: "พ.ร.บ. ตำรวจแห่งชาติ พ.ศ. 2565 กำหนดว่า ยศแรกเริ่มต้นของข้าราชการตำรวจชั้น 'ประทวน' คือยศใด?",
+                options: ["ก. สิบตำรวจตรี", "ข. สิบตำรวจโท", "ค. จ่าสิบตำรวจ", "ง. ดาบตำรวจ"],
+                answer: 0,
+                explanation: "ก. สิบตำรวจตรี (ข้าราชการตำรวจชั้นประทวนมียศเรียงลำดับดังนี้: สิบตำรวจตรี (ส.ต.ต.) → สิบตำรวจโท (ส.ต.ท.) → สิบตำรวจเอก (ส.ต.อ.) → จ่าสิบตำรวจ → ดาบตำรวจ)"
+            },
+            {
+                question: "RAM ในคอมพิวเตอร์ย่อมาจากอะไร?",
+                options: ["ก. Read-only Access Memory", "ข. Random Access Memory", "ค. Readable Arithmetic Memory", "ง. Rapid Access Module"],
+                answer: 1,
+                explanation: "ข. Random Access Memory (RAM ย่อมาจาก Random Access Memory คือหน่วยความจำหลักชั่วคราว ทำงานเก็บข้อมูลระหว่างที่โปรแกรมกำลังรันอยู่ เมื่อปิดเครื่องข้อมูลจะสูญหายไปทันที)"
+            },
+            {
+                question: "การส่งข้อมูลแบบ 'Wireless' หมายถึงอะไร?",
+                options: ["ก. การส่งข้อมูลผ่านสาย USB", "ข. การส่งข้อมูลผ่านสายแลน (LAN)", "ค. การส่งข้อมูลผ่านคลื่นวิทยุหรือสัญญาณไร้สาย", "ง. การส่งข้อมูลผ่านดาวเทียมเท่านั้น"],
+                answer: 2,
+                explanation: "ค. การส่งข้อมูลผ่านคลื่นวิทยุหรือสัญญาณไร้สาย (Wireless หมายถึงไร้สาย การสื่อสารข้อมูลโดยไม่ต้องใช้สายเชื่อมต่อทางกายภาพ ใช้คลื่นแม่เหล็กไฟฟ้า เช่น Wi-Fi, Bluetooth, 4G, 5G)"
+            },
+            {
+                question: "ตำรวจมีหน้าที่ตาม พ.ร.บ. ตำรวจแห่งชาติ พ.ศ. 2565 ในข้อใดต่อไปนี้?",
+                options: ["ก. รักษาความสงบเรียบร้อยและความมั่นคงของชาติ", "ข. ปฏิบัติตามคำสั่งของนายจ้างเอกชน", "ค. ไม่มีหน้าที่ในการบังคับใช้กฎหมาย", "ง. ทำงานเฉพาะในเวลาราชการเท่านั้น"],
+                answer: 0,
+                explanation: "ก. รักษาความสงบเรียบร้อยและความมั่นคงของชาติ (หน้าที่หลักของตำรวจตาม พ.ร.บ. ตำรวจแห่งชาติ: รักษาความสงบ ป้องกันและปราบปรามอาชญากรรม บังคับใช้กฎหมาย และบริการประชาชน)"
+            },
+            {
+                question: "หลักจริยธรรมตำรวจข้อ 'ปฏิบัติต่อประชาชนเป็นธรรม' หมายความว่าอย่างไร?",
+                options: ["ก. เลือกปฏิบัติตามความพอใจของตนเอง", "ข. ดูแลเฉพาะประชาชนที่มีฐานะดี", "ค. ปฏิบัติต่อประชาชนทุกคนเท่าเทียม ไม่เลือกปฏิบัติ", "ง. ปฏิบัติตามคำสั่งผู้บังคับบัญชาเท่านั้น"],
+                answer: 2,
+                explanation: "ค. ปฏิบัติต่อประชาชนทุกคนเท่าเทียม ไม่เลือกปฏิบัติ (ตามประมวลจริยธรรมตำรวจ ต้องให้บริการประชาชนทุกคนอย่างเท่าเทียม ไม่เลือกปฏิบัติตามเพศ วัย ฐานะ เชื้อชาติ หรือความสัมพันธ์ส่วนตัว)"
+            },
+            {
+                question: "เหตุการณ์ใดต่อไปนี้เป็น 'ความผิดซึ่งหน้า' ตามประมวลกฎหมายวิธีพิจารณาความอาญา?",
+                options: ["ก. พบหลักฐานอยู่ในความครอบครองหลังเกิดเหตุ 2 วัน", "ข. บุคคลกำลังกระทำความผิดต่อหน้าตำรวจ", "ค. มีผู้แจ้งเบาะแสว่าบุคคลนั้นเป็นผู้กระทำผิด", "ง. บุคคลมีประวัติอาชญากรรมมาก่อน"],
+                answer: 1,
+                explanation: "ข. บุคคลกำลังกระทำความผิดต่อหน้าตำรวจ (ความผิดซึ่งหน้าคือ การกระทำความผิดที่ถูกพบเห็นขณะกระทำอยู่จริง ไม่ว่าจะเป็นการพบโดยตำรวจหรือบุคคลทั่วไป และรวมถึงพบขณะหลบหนีทันทีหลังกระทำผิด)"
+            },
+            {
+                question: "ข้อใดต่อไปนี้คือ 'ไวรัสคอมพิวเตอร์' ที่ทำการเข้ารหัสไฟล์ของเหยื่อแล้วเรียกค่าไถ่?",
+                options: ["ก. Virus", "ข. Worm", "ค. Ransomware", "ง. Adware"],
+                answer: 2,
+                explanation: "ค. Ransomware (แรนซัมแวร์คือมัลแวร์ที่เข้ารหัสล็อกไฟล์ของเหยื่อทั้งหมด แล้วเรียกร้องค่าไถ่เป็นสกุลเงินดิจิทัล เช่น Bitcoin เพื่อแลกกับรหัสถอดล็อกคืน)"
+            },
+            {
+                question: "อนุกรม 1, 4, 9, 16, 25, ... ตัวถัดไปคือข้อใด?",
+                options: ["ก. 30", "ข. 36", "ค. 40", "ง. 49"],
+                answer: 1,
+                explanation: "ข. 36 (อนุกรมกำลังสอง: 1²=1, 2²=4, 3²=9, 4²=16, 5²=25, ดังนั้นตัวถัดไปคือ 6²=36)"
+            },
+            {
+                question: "ในการประชุมอาเซียน ประเทศสมาชิกทั้ง 10 ประเทศ ประเทศใดเป็นสมาชิกล่าสุดที่เข้าร่วมอาเซียน?",
+                options: ["ก. กัมพูชา", "ข. ลาว", "ค. เมียนมา", "ง. ติมอร์-เลสเต"],
+                answer: 3,
+                explanation: "ง. ติมอร์-เลสเต (ติมอร์-เลสเตเป็นสมาชิกล่าสุดของอาเซียน ได้รับสถานะผู้สังเกตการณ์ในปี 2002 และได้รับการยอมรับเป็นสมาชิกลำดับที่ 11 อย่างเป็นทางการในปี 2022)"
             }
         ]
     }
@@ -444,37 +624,8 @@ const studyGuidesData = {
                 <div class="study-tip-box">
                     <div class="study-tip-title">สูตรคณิตทั่วไปที่ต้องจำก่อนสอบ:</div>
                     <div class="study-tip-body">
-                        • <b>โจทย์ปัญหาขาและหัวสัตว์:</b> สมมติ สัตว์ 2 ขา (นก = X), สัตว์ 4 ขา (เสือ = Y)
-                        <br>&nbsp;&nbsp;สมการจำนวนตัว: X + Y = จำนวนหัวทั้งหมด
-                        <br>&nbsp;&nbsp;สมการจำนวนขา: 2X + 4Y = จำนวนขาทั้งหมด
-                        <br>• <b>โจทย์การทำงานร่วมกัน:</b> ทำงานร่วมกันเสร็จในเวลา T
-                        <br>&nbsp;&nbsp;สูตร: T = (T1 * T2) / (T1 + T2)
-                        <br>• <b>โจทย์ปัญหานับจำนวนคนจับมือ:</b> จำนวนคน N คน จับมือกันทั่วถึงทุกคน
-                        <br>&nbsp;&nbsp;สูตรจับมือ: จำนวนครั้ง = N * (N - 1) / 2
-                    </div>
-                </div>
-
-                <h3>3. การไขเงื่อนไขสัญลักษณ์ (Symbolic Conditions)</h3>
-                <p>หัวใจสำคัญคือการเชื่อมตัวอักษรและสรุปความสัมพันธ์ของตัวแปร:</p>
-                <h4>กฎการกลับเครื่องหมายไม่หลัก:</h4>
-                <div class="study-table-wrapper">
-                    <table class="study-table">
-                        <thead>
-                            <tr>
-                                <th>เครื่องหมายในโจทย์</th>
-                                <th>ต้องแปลงเป็นเครื่องหมายหลัก</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><td>&cent;&gt; (ไม่มากกว่า)</td><td>&le; (น้อยกว่าหรือเท่ากับ)</td></tr>
-                            <tr><td>&cent;&lt; (ไม่น้อยกว่า)</td><td>&ge; (มากกว่าหรือเท่ากับ)</td></tr>
-                            <tr><td>&cent;&ge; (ไม่มากกว่าและไม่เท่ากับ)</td><td>&lt; (น้อยกว่า)</td></tr>
-                            <tr><td>&cent;&le; (ไม่น้อยกว่าและไม่เท่ากับ)</td><td>&gt; (มากกว่า)</td></tr>
-                            <tr><td>&cent;= (ไม่เท่ากับ)</td><td>&gt; หรือ &lt; (ต้องพิจารณาทั้งคู่)</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-                <p><b>หลักการเชื่อมประโยค:</b> หากมีเงื่อนไขสองบรรทัด ให้ใช้ตัวอักษรที่มีชื่อเหมือนกันทำหน้าที่เป็นสะพานเชื่อม และตรวจสอบเครื่องหมาย หากหันปลายสวนทางกัน (เช่น A > B < C) จะสรุปความสัมพันธ์ไม่ได้ทันที ให้ตอบ <b>"ไม่แน่ชัด"</b></p>
+                        • <b>โจทย์ปัญหาขาและหัวสัตว์:</b> สมมติ สัตว์ 2 ขา (นก) = x ตัว และสัตว์ 4 ขา (เสือ) = y ตัว จะได้ 2x + 4y = จำนวนขา, x + y = จำนวนหัว
+�รที่มีชื่อเหมือนกันทำหน้าที่เป็นสะพานเชื่อม และตรวจสอบเครื่องหมาย หากหันปลายสวนทางกัน (เช่น A > B < C) จะสรุปความสัมพันธ์ไม่ได้ทันที ให้ตอบ <b>"ไม่แน่ชัด"</b></p>
             `
         },
         {
@@ -818,6 +969,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initial Render
     renderExtensions();
     renderShortcuts();
+    renderQuizHistory();
     initQuiz();
     initPastExams();
     renderPastExams();
@@ -1359,6 +1511,82 @@ function initQuiz() {
     btnNext.addEventListener("click", nextQuestion);
     btnRestart.addEventListener("click", restartQuiz);
     btnReview.addEventListener("click", toggleReviewPanel);
+    
+    // Count pill selector
+    document.querySelectorAll(".count-pill").forEach(pill => {
+        pill.addEventListener("click", () => {
+            document.querySelectorAll(".count-pill").forEach(p => p.classList.remove("active"));
+            pill.classList.add("active");
+        });
+    });
+    
+    renderQuizHistory();
+}
+
+// ==========================================
+// LocalStorage Quiz History System (Phase 2)
+// ==========================================
+const HISTORY_KEY_PREFIX = "quizHistory_";
+function getHistoryKey() { return HISTORY_KEY_PREFIX + activeExam; }
+
+function saveQuizHistory(score, total) {
+    const key = getHistoryKey();
+    const existing = JSON.parse(localStorage.getItem(key) || "[]");
+    const now = new Date();
+    const dateStr = now.toLocaleDateString("th-TH", { day: "numeric", month: "short", year: "numeric" });
+    existing.unshift({ score, total, date: dateStr, ts: Date.now() });
+    if (existing.length > 20) existing.length = 20;
+    localStorage.setItem(key, JSON.stringify(existing));
+}
+
+function getScoreClass(score, total) {
+    const pct = (score / total) * 100;
+    if (pct === 100) return "excellent";
+    if (pct >= 80) return "good";
+    if (pct >= 60) return "average";
+    return "poor";
+}
+
+function renderQuizHistory() {
+    const panel = document.getElementById("quiz-history-panel");
+    if (!panel) return;
+    const key = getHistoryKey();
+    const history = JSON.parse(localStorage.getItem(key) || "[]");
+    if (history.length === 0) {
+        panel.innerHTML = '<div class="history-panel-header"><div class="history-panel-title"><i class="fa-solid fa-chart-line"></i> ประวัติผลสอบ</div></div><div class="history-empty"><i class="fa-solid fa-inbox"></i><span>ยังไม่มีประวัติการสอบ ลองทำข้อสอบสักรอบแล้วกลับมาดูสถิติ!</span></div>';
+        return;
+    }
+    const totalAttempts = history.length;
+    const avgScore = (history.reduce((s, h) => s + (h.score / h.total * 100), 0) / totalAttempts).toFixed(0);
+    const bestScore = history.reduce((best, h) => { const p = h.score/h.total*100; return p > best ? p : best; }, 0).toFixed(0);
+    const logItems = history.map(h => {
+        const cls = getScoreClass(h.score, h.total);
+        const pct = Math.round((h.score / h.total) * 100);
+        const label = cls === "excellent" ? "เยี่ยม" : cls === "good" ? "ดี" : cls === "average" ? "พอใช้" : "พลาด";
+        return '<div class="history-log-item">'
+            + '<span class="history-log-badge ' + cls + '">' + label + '</span>'
+            + '<span class="history-log-score">' + h.score + '/' + h.total + '</span>'
+            + '<div class="history-log-bar-wrap"><div class="history-log-bar ' + cls + '" style="width:' + pct + '%"></div></div>'
+            + '<span class="history-log-date">' + h.date + '</span></div>';
+    }).join("");
+    panel.innerHTML = '<div class="history-panel-header">'
+        + '<div class="history-panel-title"><i class="fa-solid fa-chart-line"></i> ประวัติผลสอบ (' + examData[activeExam].title + ')</div>'
+        + '<button class="history-clear-btn" id="history-clear-btn"><i class="fa-solid fa-trash"></i> ล้างประวัติ</button></div>'
+        + '<div class="history-stats-row">'
+        + '<div class="history-stat-box"><span class="history-stat-num">' + totalAttempts + '</span><span class="history-stat-label">ครั้งที่สอบ</span></div>'
+        + '<div class="history-stat-box"><span class="history-stat-num">' + avgScore + '%</span><span class="history-stat-label">คะแนนเฉลี่ย</span></div>'
+        + '<div class="history-stat-box"><span class="history-stat-num">' + bestScore + '%</span><span class="history-stat-label">คะแนนสูงสุด</span></div>'
+        + '</div><div class="history-log-title">ประวัติล่าสุด</div>'
+        + '<div class="history-log">' + logItems + '</div>';
+    const clearBtn = document.getElementById("history-clear-btn");
+    if (clearBtn) {
+        clearBtn.addEventListener("click", () => {
+            if (confirm("ล้างประวัติผลสอบทั้งหมดสำหรับ " + examData[activeExam].title + " ?")) {
+                localStorage.removeItem(getHistoryKey());
+                renderQuizHistory();
+            }
+        });
+    }
 }
 
 // Helper for shuffling arrays using Fisher-Yates algorithm
@@ -1408,14 +1636,20 @@ function startQuiz() {
         };
     });
     
-    // Shuffle the questions order
-    quizState.questions = shuffleArray(preparedQuestions);
+    // Get selected question count
+    const activePill = document.querySelector(".count-pill.active");
+    const selectedCount = activePill ? parseInt(activePill.getAttribute("data-count")) : 10;
+    
+    // Shuffle all questions, then slice to selected count
+    const allShuffled = shuffleArray(preparedQuestions);
+    quizState.questions = allShuffled.slice(0, Math.min(selectedCount, allShuffled.length));
     quizState.answers = Array(quizState.questions.length).fill(null);
     
     const selectedMode = document.querySelector('input[name="quiz-mode"]:checked');
     quizState.mode = selectedMode ? selectedMode.value : "timed";
     
     document.getElementById("quiz-intro").style.display = "none";
+    document.getElementById("quiz-history-panel").style.display = "none";
     document.getElementById("quiz-summary").style.display = "none";
     document.getElementById("quiz-active").style.display = "block";
     
@@ -1592,7 +1826,10 @@ function showResults() {
     
     const scoreNum = quizState.score;
     document.getElementById("score-num-text").textContent = scoreNum;
-    document.getElementById("quiz-review-btn").innerHTML = `<i class="fa-solid fa-list-check"></i> ดูเฉลยทั้งหมด`;
+    document.getElementById("quiz-review-btn").innerHTML = '<i class="fa-solid fa-list-check"></i> ดูเฉลยทั้งหมด';
+    
+    // Save to LocalStorage history
+    saveQuizHistory(scoreNum, quizState.questions.length);
     
     // Apply color class to score circle
     const scoreCircle = document.getElementById("score-circle");
@@ -1697,7 +1934,12 @@ function renderReviewPanel() {
 }
 
 function restartQuiz() {
-    startQuiz();
+    document.getElementById("quiz-summary").style.display = "none";
+    document.getElementById("quiz-review-panel").style.display = "none";
+    document.getElementById("quiz-review-panel").innerHTML = "";
+    document.getElementById("quiz-intro").style.display = "block";
+    document.getElementById("quiz-history-panel").style.display = "block";
+    renderQuizHistory();
 }
 
 // ==========================================

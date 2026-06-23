@@ -112,7 +112,17 @@
                             <i class="fa-solid fa-trophy"></i>
                         </div>
                         <h2>เตรียมความพร้อมก่อนเข้าห้องสอบจริง!</h2>
-                        <p>แบบทดสอบวัดระดับความรู้ความสามารถเสมือนจริงวิชาสอบจำนวน 10 ข้อ เมื่อคุณพร้อมแล้ว เลือกโหมดที่ต้องการและกดปุ่มด้านล่างเพื่อเริ่มทำข้อสอบได้ทันที</p>
+                        <p>เลือกจำนวนข้อสอบและโหมดที่ต้องการ แล้วกดเริ่มทำข้อสอบได้ทันที ระบบจะสุ่มข้อสอบและตัวเลือกใหม่ทุกครั้ง</p>
+
+                        <!-- Question Count Selector -->
+                        <div class="count-selector-row">
+                            <span class="count-label"><i class="fa-solid fa-list-ol"></i> เลือกจำนวนข้อ:</span>
+                            <div class="count-pills" id="count-pills">
+                                <button class="count-pill active" data-count="10">10 ข้อ</button>
+                                <button class="count-pill" data-count="20">20 ข้อ</button>
+                                <button class="count-pill" data-count="30">30 ข้อ</button>
+                            </div>
+                        </div>
                         
                         <!-- Quiz Mode Selector -->
                         <div class="quiz-mode-selector">
@@ -137,6 +147,11 @@
                         <button id="quiz-start-btn" class="btn-action">
                             เริ่มทำข้อสอบ <i class="fa-solid fa-arrow-right"></i>
                         </button>
+                    </div>
+
+                    <!-- Quiz History Stats Panel -->
+                    <div id="quiz-history-panel" class="quiz-history-panel">
+                        <!-- Dynamically rendered by app.js -->
                     </div>
 
                     <!-- Active Quiz Card -->
