@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบติวสอบ ก.พ. & นายสิบตำรวจ - ปี 69</title>
+    <meta name="description" content="คู่มือเตรียมสอบวิชาคอมพิวเตอร์และวิชาหลักอื่นๆ สำหรับการสอบ ก.พ. ภาค ก และ นายสิบตำรวจ ปี 2569 สรุปเนื้อหาเด่น คีย์ลัด คีย์เวิร์ดอาเซียน กฎหมาย พร้อมแนวข้อสอบเก่าพร้อมเฉลยละเอียด">
+    <!-- Font Awesome CDN for Modern Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- App Header Banner with Theme Toggle -->
+        <header class="app-header">
+            <div class="header-content">
+                <span class="header-badge" id="badge-info"><i class="fa-solid fa-graduation-cap"></i> ก.พ. ภาค ก - อัปเดตปี 69</span>
+                <h1>คลังข้อสอบ & สรุปเนื้อหา สอบ ก.พ. ภาค ก</h1>
+                <p>รวมสรุปเนื้อหาหลัก 3 หมวดวิชา (คิดวิเคราะห์, ภาษาอังกฤษ, กฎหมายลักษณะข้าราชการที่ดี) พร้อมแนวข้อสอบเสมือนจริงและคีย์ลัดคอมพิวเตอร์ที่ออกบ่อย</p>
+            </div>
+            <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="สลับธีม มืด/สว่าง">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+
+        <!-- Exam Switcher (OCSC vs Police NCO) -->
+        <div class="exam-switcher">
+            <button class="exam-btn active" data-exam="ocsc" aria-label="เลือกเตรียมสอบ ก.พ. ภาค ก">
+                <i class="fa-solid fa-building-user"></i> สอบ ก.พ. ภาค ก (ปี 69)
+            </button>
+            <button class="exam-btn" data-exam="police" aria-label="เลือกเตรียมสอบ นายสิบตำรวจ">
+                <i class="fa-solid fa-shield-halved"></i> สอบ นายสิบตำรวจ (ปี 69)
+            </button>
+        </div>
+
+        <!-- Tab Navigation Menu -->
+        <nav class="nav-tabs" role="tablist">
+            <button class="tab-btn active" data-tab="cheat-sheet" role="tab" aria-selected="true" id="tab-sheet-btn">
+                <i class="fa-solid fa-file-lines"></i> สรุปเนื้อหาสำคัญ
+            </button>
+            <button class="tab-btn" data-tab="shortcuts" role="tab" aria-selected="false" id="tab-shortcuts-btn">
+                <i class="fa-solid fa-keyboard"></i> คีย์ลัดคอมพิวเตอร์
+            </button>
+            <button class="tab-btn" data-tab="quiz" role="tab" aria-selected="false" id="tab-quiz-btn">
+                <i class="fa-solid fa-circle-question"></i> ตะลุยแนวข้อสอบ
+            </button>
+            <button class="tab-btn" data-tab="past-exams" role="tab" aria-selected="false" id="tab-past-exams-btn">
+                <i class="fa-solid fa-clock-rotate-left"></i> แนวข้อสอบปี 65-68
+            </button>
+        </nav>
+
+        <!-- Search Bar Utility -->
+        <div class="search-container">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" id="search-input" class="search-input" placeholder="ค้นหาเนื้อหาเตรียมตัว... (พิมพ์คีย์เวิร์ด หรือ ชื่อวิชา)" aria-label="ค้นหาข้อมูล">
+        </div>
+
+        <!-- MAIN TAB CONTENT VIEWS -->
+        <main>
+            
+            <!-- Tab 1: Category Summary Cards & Full Study Guides -->
+            <section id="cheat-sheet" class="tab-content active" role="tabpanel" aria-labelledby="tab-sheet-btn">
+                
+                <!-- Sub-Navigation for switching view modes -->
+                <div class="sub-nav">
+                    <button class="sub-btn active" data-sub="cards-view" id="sub-cards-btn" aria-label="ดูการ์ดจุดเน้นข้อสอบ">
+                        <i class="fa-regular fa-square-check"></i> การ์ดจุดเน้นข้อสอบ
+                    </button>
+                    <button class="sub-btn" data-sub="guides-view" id="sub-guides-btn" aria-label="ดูคู่มืออ่านสรุปเนื้อหา">
+                        <i class="fa-solid fa-book-open"></i> คู่มืออ่านสรุปเนื้อหา (ติวในตัว)
+                    </button>
+                </div>
+
+                <!-- Sub-View 1: Quick Flashcards Grid -->
+                <div id="cards-view" class="sub-view-content">
+                    <div id="cards-container">
+                        <!-- Dynamic rendering by app.js -->
+                    </div>
+                </div>
+
+                <!-- Sub-View 2: Collapsible Study Guides Accordion -->
+                <div id="guides-view" class="sub-view-content" style="display: none;">
+                    <div class="accordion-container" id="accordion-container">
+                        <!-- Dynamic rendering by app.js -->
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Tab 2: Keyboard Shortcuts / Specific Focus Points -->
+            <section id="shortcuts" class="tab-content" role="tabpanel" aria-labelledby="tab-shortcuts-btn">
+                <div id="shortcuts-container">
+                    <!-- Dynamic rendering by app.js -->
+                </div>
+            </section>
+
+            <!-- Tab 3: Interactive Quiz Application -->
+            <section id="quiz" class="tab-content" role="tabpanel" aria-labelledby="tab-quiz-btn">
+                <div class="quiz-wrapper">
+                    
+                    <!-- Quiz Intro Card -->
+                    <div id="quiz-intro" class="quiz-intro-card">
+                        <div class="quiz-icon">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h2>เตรียมความพร้อมก่อนเข้าห้องสอบจริง!</h2>
+                        <p>แบบทดสอบวัดระดับความรู้ความสามารถเสมือนจริงวิชาสอบจำนวน 10 ข้อ เมื่อคุณพร้อมแล้ว เลือกโหมดที่ต้องการและกดปุ่มด้านล่างเพื่อเริ่มทำข้อสอบได้ทันที</p>
+                        
+                        <!-- Quiz Mode Selector -->
+                        <div class="quiz-mode-selector">
+                            <label class="mode-option">
+                                <input type="radio" name="quiz-mode" value="timed" checked>
+                                <div class="mode-box">
+                                    <i class="fa-solid fa-hourglass-half mode-icon"></i>
+                                    <div class="mode-title">โหมดจับเวลา (20 วิ/ข้อ)</div>
+                                    <div class="mode-desc">ฝึกฝนความไวในการคิดและจำกัดเวลาเหมือนอยู่ในห้องสอบจริง</div>
+                                </div>
+                            </label>
+                            <label class="mode-option">
+                                <input type="radio" name="quiz-mode" value="untimed">
+                                <div class="mode-box">
+                                    <i class="fa-solid fa-circle-play mode-icon"></i>
+                                    <div class="mode-title">โหมดไม่จับเวลา</div>
+                                    <div class="mode-desc">ทำข้อสอบเรื่อยๆ ไม่มีเวลาบีบคั้น เหมาะสำหรับอ่านทบทวนเฉลย</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <button id="quiz-start-btn" class="btn-action">
+                            เริ่มทำข้อสอบ <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Active Quiz Card -->
+                    <div id="quiz-active" class="quiz-container">
+                        <!-- Progress Bar -->
+                        <div class="quiz-progress-bar">
+                            <div id="quiz-progress" class="quiz-progress"></div>
+                        </div>
+
+                        <!-- Countdown Timer Bar -->
+                        <div class="quiz-timer-bar-container" id="quiz-timer-container">
+                            <div id="quiz-timer-bar" class="quiz-timer-bar"></div>
+                        </div>
+                        
+                        <div class="quiz-header-meta">
+                            <span class="question-number" id="question-num-text">คำถามข้อที่ 1</span>
+                            <span class="quiz-timer" id="quiz-timer-text"><i class="fa-solid fa-clock"></i> 20 วินาที</span>
+                        </div>
+                        
+                        <!-- Question content -->
+                        <div class="question-text" id="question-text-content">
+                            กำลังโหลดคำถาม...
+                        </div>
+                        
+                        <!-- Options container -->
+                        <div class="options-list" id="options-container">
+                            <!-- Dynamic rendering of options by app.js -->
+                        </div>
+                        
+                        <!-- Explanation Panel -->
+                        <div id="quiz-explanation" class="explanation-panel">
+                            <!-- Dynamic success/error message and detailed explanation -->
+                        </div>
+                        
+                        <!-- Quiz Action buttons -->
+                        <div class="quiz-footer">
+                            <button id="quiz-submit-btn" class="btn-action" disabled>
+                                ส่งคำตอบ <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                            <button id="quiz-next-btn" class="btn-action" style="display: none;">
+                                คำถามถัดไป <i class="fa-solid fa-circle-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Score Summary Card -->
+                    <div id="quiz-summary" class="score-summary-card">
+                        <div class="score-circle">
+                            <span class="score-num" id="score-num-text">0</span>
+                            <span class="score-total">/ 10 คะแนน</span>
+                        </div>
+                        <h2 class="score-title" id="score-title-text">ประเมินผลคะแนนของคุณ</h2>
+                        <p class="score-comment" id="score-comment-text">กำลังประเมินคะแนน...</p>
+                        <button id="quiz-restart-btn" class="btn-action">
+                            <i class="fa-solid fa-arrows-rotate"></i> ทำข้อสอบใหม่อีกครั้ง
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Tab 4: Past Exams (65-68) -->
+            <section id="past-exams" class="tab-content" role="tabpanel" aria-labelledby="tab-past-exams-btn">
+                <div class="past-exams-wrapper">
+                    <!-- Year selector pills -->
+                    <div class="year-selector" id="past-exams-years">
+                        <!-- Dynamic year buttons loaded by JS -->
+                    </div>
+                    
+                    <!-- General year summary card -->
+                    <div id="year-summary-container">
+                        <!-- Dynamic summary loaded by JS -->
+                    </div>
+
+                    <!-- Subjects analysis & Sample questions -->
+                    <div class="past-exams-list" id="past-exams-content">
+                        <!-- Dynamic content loaded by JS -->
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Custom JS App logic -->
+    <script src="app.js"></script>
+</body>
+</html>
