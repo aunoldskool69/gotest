@@ -1819,47 +1819,60 @@ function nextQuestion() {
 
 function showResults() {
     const activeQuizData = quizState.questions;
+    const totalQ = activeQuizData.length;
     document.getElementById("quiz-active").style.display = "none";
     document.getElementById("quiz-summary").style.display = "block";
     document.getElementById("quiz-review-panel").style.display = "none";
     document.getElementById("quiz-review-panel").innerHTML = "";
     
     const scoreNum = quizState.score;
+    const percentage = Math.round((scoreNum / totalQ) * 100);
+    
     document.getElementById("score-num-text").textContent = scoreNum;
+    document.getElementById("score-total-text").textContent = `/ ${totalQ} คะแนน`;
     document.getElementById("quiz-review-btn").innerHTML = '<i class="fa-solid fa-list-check"></i> ดูเฉลยทั้งหมด';
     
     // Save to LocalStorage history
-    saveQuizHistory(scoreNum, quizState.questions.length);
+    saveQuizHistory(scoreNum, totalQ);
     
-    // Apply color class to score circle
+    // Apply color class to score circle and percentage badge
     const scoreCircle = document.getElementById("score-circle");
     scoreCircle.className = "score-circle"; // reset
-    if (scoreNum === 10) {
+    
+    const percentBadge = document.getElementById("score-percent-badge");
+    percentBadge.className = "score-percent-badge"; // reset
+    percentBadge.textContent = `คิดเป็น ${percentage}%`;
+    
+    if (percentage === 100) {
         scoreCircle.classList.add("excellent");
+        percentBadge.classList.add("excellent");
         launchConfetti();
-    } else if (scoreNum >= 8) {
+    } else if (percentage >= 80) {
         scoreCircle.classList.add("good");
-    } else if (scoreNum >= 6) {
+        percentBadge.classList.add("good");
+    } else if (percentage >= 60) {
         scoreCircle.classList.add("average");
+        percentBadge.classList.add("average");
     } else {
         scoreCircle.classList.add("poor");
+        percentBadge.classList.add("poor");
     }
     
     let title = "";
     let comment = "";
     
-    if (scoreNum === 10) {
-        title = "🏆 สอบได้คะแนนเต็ม 10/10!";
-        comment = `คุณทำข้อสอบสนาม ${examData[activeExam].title} ถูกครบถ้วนทั้งหมด 10 ข้อ! สุดยอดความแม่นยำทางวิชาการ คุณพร้อมลงชิงชัยข้อสอบจริงแล้วครับ!`;
-    } else if (scoreNum >= 8) {
-        title = "👏 คะแนนระดับดีเยี่ยม!";
-        comment = `คุณทำคะแนนได้ ${scoreNum}/10 คะแนน ถือว่าสอบผ่านเกณฑ์รวดเดียวอย่างสบายใจ ทบทวนจุดที่ตอบผิดพักหนึ่งเพื่อเก็บคะแนนเต็มนะครับ`;
-    } else if (scoreNum >= 6) {
-        title = "👍 สอบผ่านเกณฑ์ขั้นต่ำ";
-        comment = `คุณทำคะแนนได้ ${scoreNum}/10 คะแนน ผ่านเกณฑ์ประเมินเบื้องต้น แต่อาจจะเสี่ยงในห้องสอบจริง แนะนำให้ดูเฉลยทั้งหมดเพื่อทบทวนจุดอ่อนครับ`;
+    if (percentage === 100) {
+        title = `🏆 คะแนนเต็ม 100% (${scoreNum}/${totalQ} คะแนน)`;
+        comment = `คุณทำข้อสอบสนาม ${examData[activeExam].title} ถูกครบถ้วนทั้งหมด ${totalQ} ข้อ! สุดยอดความแม่นยำทางวิชาการ คุณพร้อมลงชิงชัยข้อสอบจริงแล้วครับ!`;
+    } else if (percentage >= 80) {
+        title = `👏 ผ่านเกณฑ์ระดับดีเยี่ยม (${percentage}%)`;
+        comment = `คุณทำคะแนนได้ ${scoreNum}/${totalQ} คะแนน ถือว่าสอบผ่านเกณฑ์รวดเดียวอย่างสบายใจ ทบทวนจุดที่ตอบผิดพักหนึ่งเพื่อเก็บคะแนนเต็มนะครับ`;
+    } else if (percentage >= 60) {
+        title = `👍 สอบผ่านเกณฑ์ขั้นต่ำ (${percentage}%)`;
+        comment = `คุณทำคะแนนได้ ${scoreNum}/${totalQ} คะแนน ผ่านเกณฑ์ประเมินเบื้องต้น แต่อาจจะเสี่ยงในห้องสอบจริง แนะนำให้ดูเฉลยทั้งหมดเพื่อทบทวนจุดอ่อนครับ`;
     } else {
-        title = "📚 ต้องกลับมาทบทวนเพิ่มเติมด่วน";
-        comment = `คะแนนของคุณได้ ${scoreNum}/10 ข้อ ยังไม่ผ่านเกณฑ์ — ดูเฉลยทั้งหมดเพื่อวิเคราะห์จุดที่พลาด แล้วกลับมาลองอีกครั้ง สู้ๆ ครับ!`;
+        title = `📚 ยังไม่ผ่านเกณฑ์ (${percentage}%)`;
+        comment = `คะแนนของคุณได้ ${scoreNum}/${totalQ} คะแนน ยังไม่ผ่านเกณฑ์ประเมินเบื้องต้น — ดูเฉลยทั้งหมดเพื่อวิเคราะห์จุดที่พลาด แล้วกลับมาลองอีกครั้ง สู้ๆ ครับ!`;
     }
     
     document.getElementById("score-title-text").textContent = title;

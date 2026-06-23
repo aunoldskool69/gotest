@@ -1784,6 +1784,46 @@ header.app-header p {
 }
 .history-empty i { font-size: 1.6rem; opacity: 0.4; }
 
+/* --- Score Percent Badge --- */
+.score-percent-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: 50px;
+    margin: 0 auto 16px auto;
+    text-align: center;
+    width: fit-content;
+    box-shadow: var(--shadow-sm);
+    animation: pulseBadge 2s infinite ease-in-out;
+}
+.score-percent-badge.excellent {
+    background-color: var(--success-bg);
+    color: var(--success);
+    border: 1px solid rgba(74, 222, 128, 0.25);
+}
+.score-percent-badge.good {
+    background-color: var(--primary-bg);
+    color: var(--primary);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+}
+.score-percent-badge.average {
+    background-color: var(--warning-bg);
+    color: var(--warning);
+    border: 1px solid rgba(217, 119, 6, 0.25);
+}
+.score-percent-badge.poor {
+    background-color: var(--error-bg);
+    color: var(--error);
+    border: 1px solid rgba(220, 38, 38, 0.25);
+}
+
+@keyframes pulseBadge {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
 @media (max-width: 480px) {
     .count-selector-row { flex-direction: column; gap: 8px; }
     .history-stats-row { grid-template-columns: 1fr 1fr; }
