@@ -1629,7 +1629,7 @@ header.app-header p {
     gap: 6px;
 }
 .count-label i { color: var(--primary); }
-.count-pills { display: flex; gap: 8px; }
+.count-pills { display: flex; gap: 8px; flex-wrap: wrap; }
 .count-pill {
     background: var(--bg-input);
     border: 2px solid var(--border-color);

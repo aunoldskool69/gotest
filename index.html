@@ -124,13 +124,21 @@
                             </div>
                         </div>
                         
+                        <!-- Subject Selector -->
+                        <div class="count-selector-row" id="quiz-subject-row" style="margin-top: 15px;">
+                            <span class="count-label"><i class="fa-solid fa-book"></i> เลือกวิชาสอบ:</span>
+                            <div class="count-pills" id="quiz-subject-pills" style="flex-wrap: wrap;">
+                                <!-- Will be rendered dynamically by app.js -->
+                            </div>
+                        </div>
+                        
                         <!-- Quiz Mode Selector -->
                         <div class="quiz-mode-selector">
                             <label class="mode-option">
                                 <input type="radio" name="quiz-mode" value="timed" checked>
                                 <div class="mode-box">
                                     <i class="fa-solid fa-hourglass-half mode-icon"></i>
-                                    <div class="mode-title">โหมดจับเวลา (20 วิ/ข้อ)</div>
+                                    <div class="mode-title">โหมดจับเวลา (30 วิ/ข้อ)</div>
                                     <div class="mode-desc">ฝึกฝนความไวในการคิดและจำกัดเวลาเหมือนอยู่ในห้องสอบจริง</div>
                                 </div>
                             </label>
@@ -168,7 +176,7 @@
                         
                         <div class="quiz-header-meta">
                             <span class="question-number" id="question-num-text">คำถามข้อที่ 1</span>
-                            <span class="quiz-timer" id="quiz-timer-text"><i class="fa-solid fa-clock"></i> 20 วินาที</span>
+                             <span class="quiz-timer" id="quiz-timer-text"><i class="fa-solid fa-clock"></i> 30 วินาที</span>
                         </div>
                         
                         <!-- Question content -->
